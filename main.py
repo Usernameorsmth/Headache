@@ -1,23 +1,43 @@
+# import necessary packages
 from abc import ABC, abstractmethod
 
-# Create base class
-class Absclass(ABC):
+# create a base class
+class Animal(ABC):
 
-    # Function to print a value
-    def print(self, x):
-        print("Passed value: ", x)
+    # abstract method
+    # should be implemented by all sub-classes
+    def move(self):
+        pass
 
-    # Abstract Method
-    @abstractmethod
-    def task(self):
-        print("We are inside Absclass task")
+# sub classes
+class Human(Animal):
 
-# Create sub class
-class test_class(Absclass):
-    def task(self):
-        print("We are inside test_class task")
+    def move(self):
+        print("I can walk and run")
 
-#object of test_class created
-test_obj = test_class()
-test_obj.task()
-test_obj.print(100)
+class Snake(Animal):
+
+    def move(self):
+        print("I can crawl")
+
+class Dog(Animal):
+    def move(self):
+        print("I can bark")
+
+class Lion(Animal):
+
+    def move(self):
+        print("I can roar")
+
+# Driver code
+R = Human()
+R.move()
+
+K = Snake()
+K.move()
+
+R = Dog()
+R.move()
+
+K = Lion()
+K.move()
